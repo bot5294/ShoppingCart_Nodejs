@@ -27,13 +27,16 @@ function getCartItems(){
     let tbl = document.getElementById('cart-table');
     let keys = Object.keys(localStorage);
         for(let i of keys) {
+            
             if(i=='ccount'){
                 continue;
             }
-        cartItem = localStorage.key(i);
+            console.log(i);
+        // cartItem = localStorage.key(i);
         // console.log(cartItem)
         const node = document.createElement("li");
-        const text = document.createTextNode(cartItem);
+        let str = i+" * "+localStorage.getItem(i);
+        const text = document.createTextNode(str);
         node.appendChild(text);
         tbl.appendChild(node);
     };
