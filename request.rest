@@ -1,0 +1,9 @@
+POST http://localhost:8000/items/items/addItem
+Content-Type: application/json
+
+{
+    "name":"car",
+    "price":"545",
+    "desc":"yello",
+    "image":"xyz.jpg"
+}

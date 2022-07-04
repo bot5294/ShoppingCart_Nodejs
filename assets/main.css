@@ -1,0 +1,23 @@
+.product-box{
+    text-align: center;
+    padding: 2px;
+
+    /* min-height: 270px;
+    max-width: 300px;
+    min-width: 200px; */
+}
+.product-box h3{
+    margin-top: 2px;
+    font-size:medium;
+}
+#cart-counter{
+    border-radius: 50% 50%;
+    width:50px;
+    padding: 5px;
+    font-size: 10px;
+    background-color: red;
+    color: white;
+}
+a{
+    text-decoration: none;
+}

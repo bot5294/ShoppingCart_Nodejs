@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+<% 
+    let i=0;
+    data.forEach(product => {
+if(i%5==0){
+%>
+    </div>
+    <div class="row">
+<% } %>
+        <div class="col-md-4 col-sm-12 col-lg-2 border m-1  shadow product-box">
+                <div class="border p-2">
+                <img src="<%= product.image %>" width="150px" height="100px">
+                <h3 class="text-primary"><%= product.name %></h3>
+                </div>
+                <div class="p-3">
+                    <h5><b>₹</b><%= product.price %> /-</h5>
+                    <button class="btn btn-info" onclick="add2cart('<%= product.name %>')">Add to cart</button>
+                </div>
+        </div> 
+    <% i++;}); %>
+    </div>
+</div>

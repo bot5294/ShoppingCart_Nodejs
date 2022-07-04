@@ -1,0 +1,12 @@
+<%- include('./partials/navbar.ejs') %>
+<h1 class="center">Add Items</h1>
+
+<form action="/items/addItem" method="POST" enctype="multipart/form-data">
+    Item Name : <input type="text" name="name"><br>
+    Item Description : <input type="text" name="desc"><br>
+    Item Price : <input type="Number" name="price"><br>
+    Item Image : <input type="file" name="image" accept="image/png, image/jpeg">
+    <button type="submit">Submit</button>
+    <p style="color: red;"><%= typeof message == 'undefined' ? '' : message %></p>
+</form>
+</body></html>
