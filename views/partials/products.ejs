@@ -15,7 +15,10 @@ if(i%5==0){
                 </div>
                 <div class="p-3">
                     <h5><b>₹</b><%= product.price %> /-</h5>
-                    <button class="btn btn-info" onclick="add2cart('<%= product.name %>')">Add to cart</button>
+                    <form action="/add2cart" method="get">
+                        <input type="text" value="<%= product._id %>" name="id" hidden>
+                        <button class="btn btn-info" type="submit" onclick="add2cart()">Add to cart</button>
+                    </form>
                 </div>
         </div> 
     <% i++;}); %>

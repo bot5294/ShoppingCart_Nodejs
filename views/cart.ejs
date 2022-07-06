@@ -9,9 +9,23 @@
     <title>Cart</title>
 </head>
 <body>
-    <ol class="" id="cart-table">
-    </ol>
+    <h1>cart</h1>
+    <table class="table table-responsive table-stripped">
+        <th>Product Name</th>
+        <th>Quantity</th>
+        <th>Price/Piece</th>
+        <tr>
+            <% data.forEach(product => {
+                console.log(product);
+            %>
+            <td></td>
+
+            <%
+            });
+            %>
+        </tr>
+    </table>
     <script src="../assets/main.js"></script>
-    <script>getCartItems()</script>
+    <%#// <script>getCartItems()</script> %>
 </body>
 </html>
