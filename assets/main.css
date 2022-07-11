@@ -12,12 +12,26 @@
 }
 #cart-counter{
     border-radius: 50% 50%;
-    width:50px;
+    width: 20px;
     padding: 5px;
     font-size: 10px;
     background-color: red;
     color: white;
+    position: absolute;
+    margin-left: 20px;
+    z-index: 10;
+    margin-top: 5px;
+    text-align: center;
+}
+.cart-box{
+    position: relative;
 }
 a{
     text-decoration: none;
+}
+.table-holder{
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    width: 500px;
 }

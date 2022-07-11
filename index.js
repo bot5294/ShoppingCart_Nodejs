@@ -21,7 +21,7 @@ app.set('views','./views');
 app.use(express.static(__dirname))
 app.use(express(urlencoded({extended:true})))
 app.use(bodyParser.urlencoded({ extended: true })); 
-
+// app.use(express.json());
 app.use('/', require('./routes'));
 
 app.listen(PORT,(err)=>{
