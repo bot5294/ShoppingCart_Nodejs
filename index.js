@@ -1,3 +1,5 @@
+require('dotenv').config()
+// console.log(process.env)
 const { urlencoded } = require('express');
 const express = require('express');
 const path = require('path')
@@ -12,15 +14,19 @@ const bodyParser = require('body-parser');
 // app.use('/icons',express.static(path.join(__dirname, 'node_modules/bootstrap-icons/font/bootstrap-icons')))
 
 const PORT = 8000;
+const cookieParser = require("cookie-parser");
+
+app.use(cookieParser());
 
 //  set up view engine
 app.set('view engine','ejs');
 app.set('views','./views');
 
 // app.use(express.json());
+app.use(bodyParser.json());
 app.use(express.static(__dirname))
-app.use(express(urlencoded({extended:true})))
-app.use(bodyParser.urlencoded({ extended: true })); 
+app.use(express(urlencoded({extended:false})))
+app.use(bodyParser.urlencoded({ extended: false })); 
 // app.use(express.json());
 app.use('/', require('./routes'));
 

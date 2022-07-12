@@ -1,6 +1,7 @@
 /* global customcheckout */
 
 (function() {
+    var result_data={};
     var customCheckout = customcheckout();
   
     var isCardNumberComplete = false;
@@ -87,7 +88,6 @@
             isExpiryComplete = true;
             self.hideErrorForId('card-expiry');
           }
-  
           self.setPayButton(
             isCardNumberComplete && isCVVComplete && isExpiryComplete
           );
@@ -120,7 +120,9 @@
   
         var callback = function(result) {
           console.log('token result : ' + JSON.stringify(result));
-  
+          result_data=result;
+          console.log('result_data');
+          console.log(result_data)
           if (result.error) {
             self.processTokenError(result.error);
           } else {
@@ -222,9 +224,8 @@
         this.makeTokenPayment(token);
       },
       makeTokenPayment: async function (token){
-        console.log('i am here');
+        // console.log('i am here');
         let amount = document.getElementById('amt').innerText;
-        
         const response = await fetch("./v1/profile", {
           method: 'POST',
           headers: {
@@ -232,11 +233,26 @@
           'Content-Type': 'application/json'
           },
           body: `{
-          "token": ${token},
+          "token": "${token}",
           "fname": "John",
           "lname": "doe",
-          "amount": ${amount}
+          "amount": "${amount}"
           }`,
+          card:`{
+            "name":"John",
+            "number":${result_data.last4},
+            "expiry_month":${result_data.expiryMonth},
+            "expiry_year":${result_data.expiryYear},
+          }`,
+          billing:`{
+            "name":"test",
+            "address_line1":"test area",
+            "address_line2": "test house",
+            "city":"test city",
+            "province": "test province",
+            "country": "test country",
+            "postal_code":"00000",
+          }`
     });
 
     response.json().then(data => {
