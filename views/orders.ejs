@@ -1,0 +1,22 @@
+<%- include('./partials/navbar.ejs') %>
+<h1 class="text-success">Order Placed Successfully</h1>
+<div class="table-holder">
+<table class="table table-striped table-bordered center">
+    <tr>
+        <th>Order Id</th>
+        <th>Transaction Id</th>
+        <th>Amount</th>
+        <th>Buyer Name</th>
+    </tr>
+    <tr>
+        <td><%= data.oId %></td>
+        <td><%= data.tId %></td>
+        <td><%= data.amt %></td>
+        <td><%= uName %></td>
+    </tr>
+</table>
+</div>
+<script src="../../assets/main.js"></script>
+<script>clearCart()</script>
+</body>
+</html>

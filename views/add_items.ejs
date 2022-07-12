@@ -1,12 +1,13 @@
 <%- include('./partials/navbar.ejs') %>
 <h1 class="center">Add Items</h1>
-
+<div class="table-holder">
 <form action="/items/addItem" method="POST" enctype="multipart/form-data">
-    Item Name : <input type="text" name="name"><br>
-    Item Description : <input type="text" name="desc"><br>
-    Item Price : <input type="Number" name="price"><br>
-    Item Image : <input type="file" name="image" accept="image/png, image/jpeg">
-    <button type="submit">Submit</button>
+    <input type="text" class="m-2" placeholder="Item Name" name="name" required><br>
+    <input type="text" class="m-2" placeholder="Item Description" name="desc" required><br>
+    <input type="Number" class="m-2" placeholder="Item Price" name="price" required><br>
+    Item Image : <input type="file" class="m-2" name="image" accept="image/png, image/jpeg" required><br>
+    <button type="submit" class="m-2 btn btn-primary">Submit</button><br>
     <p style="color: red;"><%= typeof message == 'undefined' ? '' : message %></p>
 </form>
-</body></html>
+</div>
+<%- include('./partials/footer.ejs') %>

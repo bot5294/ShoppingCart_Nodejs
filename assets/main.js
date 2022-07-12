@@ -41,3 +41,7 @@ function getCartItems(){
         tbl.appendChild(node);
     };
 }
+function clearCart(){
+    localStorage.clear();
+    cartLoad();
+}

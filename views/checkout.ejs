@@ -1,26 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <script src='https://libs.na.bambora.com/customcheckout/1/customcheckout.js'></script>
+<%- include('./partials/navbar.ejs') %>
+    <!-- <script src='https://libs.na.bambora.com/customcheckout/1/customcheckout.js'></script> -->
     
     <!-- import Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <title>Checkout</title>
 </head>
-<body>
-    <form action="v1/payments" method="post">
-        <h4>Amount to be paid Rs. <%= total %></h4>
-        <input type="number" value="<%= total %>" hidden name="amt">
-        <input type="text" placeholder="Enter Card Holder Name" name="card_name" required><br>
-        <input type="tel" placeholder="Enter Card Number" name="card_number" required><br>
-        <input type="tel" maxlength="3" placeholder="CVV/CVD" name="card_cvv" required><br>
-        <input type="tel" maxlength="2" placeholder="Enter Expiry Month" name="card_exp_month" required><br>
-        <input type="tel" maxlength="2" placeholder="Enter Expiry Year" name="card_exp_year" required><br>
-        <button type="submit">Checkout</button>
+<body> -->
+    <div class="table-holder bg-secondary">
+    <form action="v1/payments" method="post" class="form-group border mt-5 bg-light text-light">
+        <h4 class="text-danger mt-5">Amount to be paid $ <%= total %></h4>
+        <input type="number" class="m-2" value="<%= total %>" hidden name="amt">
+        <input type="text" class="m-2" placeholder="Enter Card Holder Name" name="card_name" required><br>
+        <input type="tel" class="m-2" placeholder="Enter Card Number" name="card_number" required><br>
+        <input type="tel" class="m-2" maxlength="3" placeholder="CVV/CVD" name="card_cvv" required><br>
+        <input type="tel" class="m-2" maxlength="2" placeholder="Enter Expiry Month" name="card_exp_month" required><br>
+        <input type="tel" class="m-2" maxlength="2" placeholder="Enter Expiry Year" name="card_exp_year" required><br>
+        <button type="submit" class="btn btn-success m-3">Pay <%= total %>$</button>
     </form>
-</body>
-</html>
+    <div class="table-holder bg-dark text-light mb-2">
+        <p class="border m-2">Credit Card Destails for testing purposes :<br>
+        CC Number : <b>4030000010001234</b> <br>
+        CVV/CVD : <b>123</b><br>
+        DOE : Any future date (format DD/MM)<br>
+        Card Holder Name : Any
+        </p>
+    </div>
+    </div>
+    <%- include('./partials/footer.ejs') %>
